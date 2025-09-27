@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineReview - Premium Movie Rating Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <script src="script1.js"></script>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <div class="container">
+        <!-- Enhanced Header -->
+        <div class="header">
+            <h1>CineReview</h1>
+            <p>Your Premium Movie Rating Experience</p>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i> Movie added successfully!
+        </div>
+
+        <!-- Enhanced Statistics -->
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalMovies">0</div>
+                <div class="stat-label">Total Movies</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="avgRating">0.0</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="topGenre">-</div>
+                <div class="stat-label">Top Genre</div>
+            </div>
+        </div>
+
+        <!-- Enhanced Add Movie Section -->
+        <div class="add-movie-section">
+            <h2>Add New Movie</h2>
+            <form id="movieForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="movieTitle"><i class="fas fa-film"></i> Movie Title *</label>
+                        <input type="text" id="movieTitle" required placeholder="Enter movie title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="movieGenre"><i class="fas fa-tags"></i> Genre</label>
+                        <select id="movieGenre">
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Documentary">Documentary</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="movieYear"><i class="fas fa-calendar"></i> Release Year</label>
+                        <input type="number" id="movieYear" min="1900" max="2030" placeholder="2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="moviePoster"><i class="fas fa-image"></i> Poster URL</label>
+                        <input type="url" id="moviePoster" placeholder="https://example.com/poster.jpg">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-star"></i> Rating *</label>
+                        <div class="rating-container">
+                            <div class="rating-input">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                                <span class="rating-value" id="ratingValue">(Click to rate)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="movieReview"><i class="fas fa-comment-alt"></i> Review</label>
+                        <textarea id="movieReview" placeholder="Share your thoughts about this movie..."></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-plus"></i> Add Movie
+                </button>
+            </form>
+        </div>
+
+        <!-- Enhanced Movies Section -->
+        <div class="movies-section">
+            <h2 class="section-title">🎭 Movie Collection</h2>
+            
+            <!-- Enhanced Filter Controls -->
+            <div class="filter-sort">
+                <label><i class="fas fa-filter"></i> Filter by Genre:</label>
+                <select id="genreFilter">
+                    <option value="">All Genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label><i class="fas fa-sort"></i> Sort by:</label>
+                <select id="sortBy">
+                    <option value="title">Title (A-Z)</option>
+                    <option value="rating">Rating (High to Low)</option>
+                    <option value="year">Year (Newest First)</option>
+                    <option value="dateAdded">Date Added (Latest First)</option>
+                </select>
+            </div>
+            
+            <!-- Movies Grid -->
+            <div class="movies-grid" id="moviesGrid">
+                <div class="no-movies">
+                    <i class="fas fa-film" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <br>No movies added yet. Add your first movie above!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
